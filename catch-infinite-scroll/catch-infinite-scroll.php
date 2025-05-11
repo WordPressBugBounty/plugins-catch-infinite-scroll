@@ -16,7 +16,7 @@
  * Plugin Name:       Catch Infinite Scroll
  * Plugin URI:        catchplugins.com/plugins/catch-infinite-scroll
  * Description:       Catch Infinite Scroll is a WordPress plugin that allows you to add the magic of infinite scrolling with several customization options on your website without affecting your wallet.
- * Version:           2.0.6
+ * Version:           2.0.7
  * Author:            Catch Plugins
  * Author URI:        catchplugins.com
  * License:           GPL-2.0+
@@ -31,7 +31,7 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-define( 'CATCH_INFINITE_SCROLL_VERSION', '2.0.6' );
+define( 'CATCH_INFINITE_SCROLL_VERSION', '2.0.7' );
 
 /**
  * The code that runs during plugin activation.
