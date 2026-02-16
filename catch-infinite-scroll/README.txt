@@ -4,7 +4,7 @@ Donate link: https://catchplugins.com/plugins/catch-infinite-scroll-pro/
 Tags: infinite scroll, infinite scrolling, infinite, scroll, load more
 Requires at least: 5.9
 Tested up to: 6.9
-Stable tag: trunk
+Stable tag: 2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -41,6 +41,15 @@ Not so easy way (via FTP) :
 * Go to **Catch Infinite Scroll** from Dashboard menu
 
 == Changelog ==
+
+= 2.1 (Released: February 16, 2026) =
+* Bug Fixed: WordPress.Security.NonceVerification.Recommended
+* Bug Fixed: WordPress.Security.EscapeOutput.OutputNotEscaped
+* Bug Fixed: WordPress.WP.I18n.MissingTranslatorsComment
+* Bug Fixed: missing_direct_file_access_protection
+* Bug Fixed: WordPress.WP.I18n.TextDomainMismatch
+* Bug Fixed: WordPress.WP.I18n.MissingArgDomain
+* Bug Fixed: plugin_header_invalid_plugin_uri
 
 = 2.0.8 (Released: January 07, 2026) =
 * Compatibility check up to version 6.9

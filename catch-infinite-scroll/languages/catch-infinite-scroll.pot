@@ -1,11 +1,11 @@
-# Copyright (C) 2018-2022 Catch Plugins
+# Copyright (C) 2018-2026 Catch Plugins
 # This file is distributed under the GNU General Public License v2 or later.
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Catch Infinite Scroll\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2026-01-07 09:42+0545\n"
+"POT-Creation-Date: 2026-02-16 21:45+0545\n"
 "PO-Revision-Date: 2016-12-12 09:23-0500\n"
 "Last-Translator: Sakin Shrestha <info@catchplugins.com>\n"
 "Language-Team: Catch Plugins <info@catchplugins.com>\n"
@@ -21,156 +21,156 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../admin/class-catch-infinite-scroll-admin.php:128
-#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:19
+#: ../admin/class-catch-infinite-scroll-admin.php:105
+#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:22
 msgid "Settings"
 msgstr ""
 
-#: ../admin/class-catch-infinite-scroll-admin.php:141
-#: ../admin/class-catch-infinite-scroll-admin.php:142
-#: ../admin/partials/catch-infinite-scroll-admin-display.php:17
+#: ../admin/class-catch-infinite-scroll-admin.php:119
+#: ../admin/class-catch-infinite-scroll-admin.php:120
+#: ../admin/partials/catch-infinite-scroll-admin-display.php:22
 msgid "Catch Infinite Scroll"
 msgstr ""
 
-#: ../admin/class-catch-infinite-scroll-admin.php:157
+#: ../admin/class-catch-infinite-scroll-admin.php:136
 msgid "You do not have sufficient permissions to access this page."
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-admin-display.php:23
+#: ../admin/partials/catch-infinite-scroll-admin-display.php:28
 msgid "Dashboard"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-admin-display.php:24
-#: ../admin/partials/catch-infinite-scroll-admin-display.php:119
-#: ../admin/partials/catch-infinite-scroll-admin-display.php:176
+#: ../admin/partials/catch-infinite-scroll-admin-display.php:29
+#: ../admin/partials/catch-infinite-scroll-admin-display.php:124
+#: ../admin/partials/catch-infinite-scroll-admin-display.php:182
 msgid "Features"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-admin-display.php:25
-#: ../admin/partials/catch-infinite-scroll-admin-display.php:168
+#: ../admin/partials/catch-infinite-scroll-admin-display.php:30
+#: ../admin/partials/catch-infinite-scroll-admin-display.php:174
 msgid "Compare Table"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-admin-display.php:33
+#: ../admin/partials/catch-infinite-scroll-admin-display.php:38
 msgid "Catch Themes & Catch Plugins Tabs"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-admin-display.php:38
+#: ../admin/partials/catch-infinite-scroll-admin-display.php:43
 msgid ""
 "If you want to turn off Catch Themes & Catch Plugins tabs option in Add "
 "Themes and Add Plugins page, please uncheck the following option."
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-admin-display.php:43
+#: ../admin/partials/catch-infinite-scroll-admin-display.php:48
 msgid "Turn On Catch Themes & Catch Plugin tabs"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-admin-display.php:65
+#: ../admin/partials/catch-infinite-scroll-admin-display.php:70
 msgid "Go Premium!"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-admin-display.php:70
+#: ../admin/partials/catch-infinite-scroll-admin-display.php:75
 msgid "Dismiss this item."
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-admin-display.php:74
-#: ../admin/partials/sidebar.php:9
+#: ../admin/partials/catch-infinite-scroll-admin-display.php:79
+#: ../admin/partials/sidebar.php:16
 msgid "Button Display Option"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-admin-display.php:75
-#: ../admin/partials/sidebar.php:10
+#: ../admin/partials/catch-infinite-scroll-admin-display.php:80
+#: ../admin/partials/sidebar.php:17
 msgid "Finish Text Color"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-admin-display.php:76
-#: ../admin/partials/sidebar.php:11
+#: ../admin/partials/catch-infinite-scroll-admin-display.php:81
+#: ../admin/partials/sidebar.php:18
 msgid "Finish Text Font Family"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-admin-display.php:77
-#: ../admin/partials/sidebar.php:12
+#: ../admin/partials/catch-infinite-scroll-admin-display.php:82
+#: ../admin/partials/sidebar.php:19
 msgid "Finish Text Font Size (for mobile devices)"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-admin-display.php:78
-#: ../admin/partials/sidebar.php:13
+#: ../admin/partials/catch-infinite-scroll-admin-display.php:83
+#: ../admin/partials/sidebar.php:20
 msgid "Load More Adv Image URL"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-admin-display.php:79
-#: ../admin/partials/sidebar.php:14
+#: ../admin/partials/catch-infinite-scroll-admin-display.php:84
+#: ../admin/partials/sidebar.php:21
 msgid "Load More Adv Image Alt"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-admin-display.php:80
-#: ../admin/partials/sidebar.php:15
+#: ../admin/partials/catch-infinite-scroll-admin-display.php:85
+#: ../admin/partials/sidebar.php:22
 msgid "Load More Adv Image Target"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-admin-display.php:81
-#: ../admin/partials/sidebar.php:16
+#: ../admin/partials/catch-infinite-scroll-admin-display.php:86
+#: ../admin/partials/sidebar.php:23
 msgid "Load More Adv Option"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-admin-display.php:82
-#: ../admin/partials/sidebar.php:17
+#: ../admin/partials/catch-infinite-scroll-admin-display.php:87
+#: ../admin/partials/sidebar.php:24
 msgid "Load More Background Color"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-admin-display.php:83
-#: ../admin/partials/sidebar.php:18
+#: ../admin/partials/catch-infinite-scroll-admin-display.php:88
+#: ../admin/partials/sidebar.php:25
 msgid "Load More Border Color"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-admin-display.php:84
-#: ../admin/partials/sidebar.php:19
+#: ../admin/partials/catch-infinite-scroll-admin-display.php:89
+#: ../admin/partials/sidebar.php:26
 msgid "Load More Border Radius"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-admin-display.php:85
-#: ../admin/partials/sidebar.php:20
+#: ../admin/partials/catch-infinite-scroll-admin-display.php:90
+#: ../admin/partials/sidebar.php:27
 msgid "Load More Border Width"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-admin-display.php:86
-#: ../admin/partials/sidebar.php:21
+#: ../admin/partials/catch-infinite-scroll-admin-display.php:91
+#: ../admin/partials/sidebar.php:28
 msgid "Load More Hover Background Color"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-admin-display.php:87
-#: ../admin/partials/sidebar.php:22
+#: ../admin/partials/catch-infinite-scroll-admin-display.php:92
+#: ../admin/partials/sidebar.php:29
 msgid "Load More Hover Border Color"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-admin-display.php:88
-#: ../admin/partials/sidebar.php:23
+#: ../admin/partials/catch-infinite-scroll-admin-display.php:93
+#: ../admin/partials/sidebar.php:30
 msgid "Load More Hover Text Color"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-admin-display.php:89
-#: ../admin/partials/sidebar.php:24
+#: ../admin/partials/catch-infinite-scroll-admin-display.php:94
+#: ../admin/partials/sidebar.php:31
 msgid "Load More Text Color"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-admin-display.php:90
-#: ../admin/partials/sidebar.php:25
+#: ../admin/partials/catch-infinite-scroll-admin-display.php:95
+#: ../admin/partials/sidebar.php:32
 msgid "Load More Text Font Size (for mobile devices)"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-admin-display.php:93
+#: ../admin/partials/catch-infinite-scroll-admin-display.php:98
 msgid "Find out why you should upgrade to Catch Infinite Scroll Premium »"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-admin-display.php:100
+#: ../admin/partials/catch-infinite-scroll-admin-display.php:105
 msgid "Pro Screenshot"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-admin-display.php:125
+#: ../admin/partials/catch-infinite-scroll-admin-display.php:130
 msgid "Easy to Set Up"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-admin-display.php:126
+#: ../admin/partials/catch-infinite-scroll-admin-display.php:131
 msgid ""
 "The plugin for infinite scrolling is extremely easy to set up on any "
 "website. Anyone (even the beginners) can easily set it up. With zero coding "
@@ -178,11 +178,11 @@ msgid ""
 "and enjoy the infinite scrolling on your website."
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-admin-display.php:130
+#: ../admin/partials/catch-infinite-scroll-admin-display.php:135
 msgid "Incredible Support"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-admin-display.php:131
+#: ../admin/partials/catch-infinite-scroll-admin-display.php:136
 msgid ""
 "We have a great line of support team and support documentation. You do not "
 "need to worry about how to use the plugins we provide, just refer to our "
@@ -190,11 +190,11 @@ msgid ""
 "your website, you can always hire our theme customizer!"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-admin-display.php:135
+#: ../admin/partials/catch-infinite-scroll-admin-display.php:140
 msgid "Infinite Scroll"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-admin-display.php:136
+#: ../admin/partials/catch-infinite-scroll-admin-display.php:141
 msgid ""
 "One of the most amazing features that Catch Infinite Scroll carries is the "
 "infinite scrolling feature. If you want to engage your users to your "
@@ -203,23 +203,23 @@ msgid ""
 "end of a page."
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-admin-display.php:140
-#: ../admin/partials/catch-infinite-scroll-admin-display.php:193
+#: ../admin/partials/catch-infinite-scroll-admin-display.php:145
+#: ../admin/partials/catch-infinite-scroll-admin-display.php:203
 msgid "Lightweight"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-admin-display.php:141
+#: ../admin/partials/catch-infinite-scroll-admin-display.php:146
 msgid ""
 "It is extremely lightweight. You do not need to worry about it affecting the "
 "space and speed of your website."
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-admin-display.php:144
-#: ../catch-infinite-scroll.php:130
+#: ../admin/partials/catch-infinite-scroll-admin-display.php:149
+#: ../catch-infinite-scroll.php:144
 msgid "Load More"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-admin-display.php:145
+#: ../admin/partials/catch-infinite-scroll-admin-display.php:150
 msgid ""
 "Catch Infinite Scroll plugin provides you with the “Load More” button. In "
 "case you don’t want to use the infinite scrolling feature, you can add this "
@@ -227,297 +227,301 @@ msgid ""
 "load more content on your website."
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-admin-display.php:149
+#: ../admin/partials/catch-infinite-scroll-admin-display.php:154
 msgid "Supports all themes on WordPress"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-admin-display.php:150
+#: ../admin/partials/catch-infinite-scroll-admin-display.php:155
 msgid ""
 "You don’t have to worry if you have a slightly different or complicated "
 "theme installed on your website. It supports all the themes on WordPress and "
 "makes your website more striking and playful."
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-admin-display.php:153
+#: ../admin/partials/catch-infinite-scroll-admin-display.php:158
 msgid "Upgrade to Catch Infinite Scroll Premium »"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-admin-display.php:161
+#: ../admin/partials/catch-infinite-scroll-admin-display.php:166
 msgid "Get Catch Infinite Scroll Pro -"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-admin-display.php:161
+#: ../admin/partials/catch-infinite-scroll-admin-display.php:166
 msgid "Get It Here!"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-admin-display.php:162
+#: ../admin/partials/catch-infinite-scroll-admin-display.php:167
 msgid "You are currently using the free version of Catch Infinite Scroll."
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-admin-display.php:163
+#: ../admin/partials/catch-infinite-scroll-admin-display.php:168
 msgid ""
 "If you have purchased from catchplugins.com, then follow this link to the "
 "installation instructions (particularly step 1)."
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-admin-display.php:177
+#: ../admin/partials/catch-infinite-scroll-admin-display.php:183
 msgid "Free"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-admin-display.php:178
+#: ../admin/partials/catch-infinite-scroll-admin-display.php:184
 msgid "Pro"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-admin-display.php:185
+#: ../admin/partials/catch-infinite-scroll-admin-display.php:191
 msgid "Super Easy Setup"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-admin-display.php:201
+#: ../admin/partials/catch-infinite-scroll-admin-display.php:215
 msgid "Custom Loading Image"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-admin-display.php:209
+#: ../admin/partials/catch-infinite-scroll-admin-display.php:227
 msgid "Custom Finish Text"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-admin-display.php:217
+#: ../admin/partials/catch-infinite-scroll-admin-display.php:239
 msgid "Supports All Themes"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-admin-display.php:225
+#: ../admin/partials/catch-infinite-scroll-admin-display.php:251
 msgid "Smooth and Uninterrupted Reading Experience"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-admin-display.php:233
+#: ../admin/partials/catch-infinite-scroll-admin-display.php:263
 msgid "Color Options"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-admin-display.php:241
+#: ../admin/partials/catch-infinite-scroll-admin-display.php:275
 msgid "Font Family Option"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-admin-display.php:249
+#: ../admin/partials/catch-infinite-scroll-admin-display.php:287
 msgid "Font Size Option"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-admin-display.php:257
+#: ../admin/partials/catch-infinite-scroll-admin-display.php:299
 msgid "Ads Image/Code Option"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-admin-display.php:265
+#: ../admin/partials/catch-infinite-scroll-admin-display.php:311
 msgid "Ads-free Dashboard"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:24
+#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:27
 msgid "Plugin Options Saved."
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:44
+#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:47
 msgid "Load On (Trigger on)"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:49
+#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:52
 msgid "Scroll"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:50
+#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:53
 msgid "Click"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:57
+#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:60
 msgid "Navigation Selector"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:62
+#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:65
 msgid "Selector containing your theme's navigation."
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:67
+#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:70
 msgid "Next Selector"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:72
+#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:75
 msgid "Link to the next page."
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:77
+#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:80
 msgid "Content Selector"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:82
+#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:85
 msgid "Selector containing your theme's content."
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:87
+#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:90
 msgid "Item Selector"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:92
+#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:95
 msgid "Selector containing single post or product."
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:97
+#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:100
 msgid "Image"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:109
+#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:112
 msgid "Upload"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:112
+#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:114
 msgid "Change"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:120
+#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:122
 msgid "Reset"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:125
+#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:127
 msgid "Load More Text"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:134
+#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:136
 msgid "Finish Text"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:143
+#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:145
 msgid "Reset Options"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:146
+#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:148
 msgid "Check to reset"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:148
+#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:150
 msgid ""
 "Caution: Reset all settings to default. Refresh the page after save to view "
 "full effects."
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:155
+#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:157
 msgid "Save Changes"
 msgstr ""
 
-#: ../admin/partials/footer.php:4
+#: ../admin/partials/footer.php:11
 msgid "Catch Plugins"
 msgstr ""
 
-#: ../admin/partials/footer.php:9
+#: ../admin/partials/footer.php:16
 msgid "View Themes"
 msgstr ""
 
-#: ../admin/partials/footer.php:10
+#: ../admin/partials/footer.php:17
 msgid "View Plugins"
 msgstr ""
 
-#: ../admin/partials/footer.php:11
+#: ../admin/partials/footer.php:18
 msgid "Support"
 msgstr ""
 
-#: ../admin/partials/sidebar.php:3
+#: ../admin/partials/sidebar.php:10
 msgid "Recommendations"
 msgstr ""
 
-#: ../admin/partials/sidebar.php:7
+#: ../admin/partials/sidebar.php:14
 msgid "Get Catch Infinite Scroll Pro"
 msgstr ""
 
-#: ../admin/partials/sidebar.php:27
+#: ../admin/partials/sidebar.php:34
 msgid "Get Now"
 msgstr ""
 
-#: ../admin/partials/sidebar.php:34
+#: ../admin/partials/sidebar.php:41
 msgid "Premium Themes"
 msgstr ""
 
-#: ../admin/partials/sidebar.php:35
+#: ../admin/partials/sidebar.php:42
 msgid ""
 "Check out our simple, clean and responsive Premium WordPress Themes that "
 "come with an array of crucial features with a superior functionality."
 msgstr ""
 
-#: ../admin/partials/sidebar.php:35
+#: ../admin/partials/sidebar.php:42
 msgid "Check our premium themes."
 msgstr ""
 
-#: ../admin/partials/sidebar.php:42
+#: ../admin/partials/sidebar.php:49
 msgid "Free Themes"
 msgstr ""
 
-#: ../admin/partials/sidebar.php:43
+#: ../admin/partials/sidebar.php:50
 msgid ""
 "Check out our collection of Free WordPress Themes that are clean, simple and "
 "feature-rich."
 msgstr ""
 
-#: ../admin/partials/sidebar.php:43
+#: ../admin/partials/sidebar.php:50
 msgid "Check our free themes."
 msgstr ""
 
-#: ../admin/partials/sidebar.php:51
+#: ../admin/partials/sidebar.php:58
 msgid "Premium Plugins"
 msgstr ""
 
-#: ../admin/partials/sidebar.php:52
+#: ../admin/partials/sidebar.php:59
 msgid ""
 "Check out our secured Premium WordPress Plugins to enhance and add extra "
 "functionalities to your website. An exceptional way to get the most out of "
 "WordPress!"
 msgstr ""
 
-#: ../admin/partials/sidebar.php:52
+#: ../admin/partials/sidebar.php:59
 msgid "Check our premium plugins."
 msgstr ""
 
-#: ../admin/partials/sidebar.php:60
+#: ../admin/partials/sidebar.php:67
 msgid "Free Plugins"
 msgstr ""
 
-#: ../admin/partials/sidebar.php:61
+#: ../admin/partials/sidebar.php:68
 msgid ""
 "Check out our Free WordPress Plugins and get the taste of our service "
 "without affecting your wallet."
 msgstr ""
 
-#: ../admin/partials/sidebar.php:62
+#: ../admin/partials/sidebar.php:69
 msgid "check our free plugins."
 msgstr ""
 
-#: ../catch-infinite-scroll.php:60
+#: ../catch-infinite-scroll.php:64
 #, php-format
 msgid ""
 "Sorry, Pro plugin is already active. No need to activate Free version. "
 "%1$s&laquo; Return to Plugins%2$s."
 msgstr ""
 
-#: ../catch-infinite-scroll.php:131
+#: ../catch-infinite-scroll.php:145
 msgid "No more items to display"
 msgstr ""
 
-#: ../includes/CatchThemesThemePlugin.php:154
+#: ../includes/CatchThemesThemePlugin.php:162
 msgid "Themes by CatchThemes"
 msgstr ""
 
-#: ../includes/CatchThemesThemePlugin.php:434
+#: ../includes/CatchThemesThemePlugin.php:444
 msgctxt "Plugin Installer"
 msgid "Catch Plugins"
 msgstr ""
 
-#: ../includes/CatchThemesThemePlugin.php:473
+#: ../includes/CatchThemesThemePlugin.php:488
 #, php-format
 msgid ""
 "You can use any of our free plugins or premium plugins from <a href=\"%s\" "
-"target=\"_blank\">Catch Plugins</a>"
+"target=\"_blank\">Catch Plugins</a>."
 msgstr ""
 
-#: ../includes/ctp-tabs-removal.php:59
-msgid "Invalid Nonce"
+#: ../includes/ctp-tabs-removal.php:64
+msgid "Invalid request."
 msgstr ""
 
-#: ../includes/ctp-tabs-removal.php:62
-msgid "Permission denied!"
+#: ../includes/ctp-tabs-removal.php:70
+msgid "Unauthorized access!"
 msgstr ""
 
 #: ../includes/ctp-tabs-removal.php:75
+msgid "Permission denied!"
+msgstr ""
+
+#: ../includes/ctp-tabs-removal.php:93
 msgid "Connection Error. Please try again."
 msgstr ""

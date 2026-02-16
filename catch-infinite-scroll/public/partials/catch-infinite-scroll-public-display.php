@@ -1,5 +1,8 @@
 <?php
 
+// Exit if accessed directly
+if (! defined('ABSPATH')) exit;
+
 /**
  * Provide a public-facing view for the plugin
  *
@@ -11,4 +14,3 @@
  * @package    Catch_Infinite_Scroll
  * @subpackage Catch_Infinite_Scroll/public/partials
  */
-?>

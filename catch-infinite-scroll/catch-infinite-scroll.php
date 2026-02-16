@@ -14,11 +14,11 @@
  *
  * @WordPress-plugin
  * Plugin Name:       Catch Infinite Scroll
- * Plugin URI:        catchplugins.com/plugins/catch-infinite-scroll
+ * Plugin URI:        https://catchplugins.com/plugins/catch-infinite-scroll
  * Description:       Catch Infinite Scroll is a WordPress plugin that allows you to add the magic of infinite scrolling with several customization options on your website without affecting your wallet.
- * Version:           2.0.8
+ * Version:           2.1
  * Author:            Catch Plugins
- * Author URI:        catchplugins.com
+ * Author URI:        https://catchplugins.com
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       catch-infinite-scroll
@@ -27,41 +27,52 @@
  */
 
 // If this file is called directly, abort.
-if ( ! defined( 'WPINC' ) ) {
+if (! defined('WPINC')) {
 	die;
 }
 
 // Define plugin version
-if ( ! defined( 'CATCH_INFINITE_SCROLL_VERSION' ) ) {
-	define( 'CATCH_INFINITE_SCROLL_VERSION', '2.0.8' );
+if (! defined('CATCH_INFINITE_SCROLL_VERSION')) {
+	define('CATCH_INFINITE_SCROLL_VERSION', '2.1');
 }
 
 /**
  * The code that runs during plugin activation.
  * This action is documented in includes/class-catch-infinite-scroll-activator.php
  */
-if ( ! defined( 'CATCH_INFINITE_SCROLL_URL' ) ) {
-	define( 'CATCH_INFINITE_SCROLL_URL', plugin_dir_url( __FILE__ ) );
+if (! defined('CATCH_INFINITE_SCROLL_URL')) {
+	define('CATCH_INFINITE_SCROLL_URL', plugin_dir_url(__FILE__));
 }
 
 // The absolute path of the directory that contains the file
-if ( ! defined( 'CATCH_INFINITE_SCROLL_PATH' ) ) {
-	define( 'CATCH_INFINITE_SCROLL_PATH', plugin_dir_path( __FILE__ ) );
+if (! defined('CATCH_INFINITE_SCROLL_PATH')) {
+	define('CATCH_INFINITE_SCROLL_PATH', plugin_dir_path(__FILE__));
 }
 
 // Gets the path to a plugin file or directory, relative to the plugins directory, without the leading and trailing slashes.
-if ( ! defined( 'CATCH_INFINITE_SCROLL_BASENAME' ) ) {
-	define( 'CATCH_INFINITE_SCROLL_BASENAME', plugin_basename( __FILE__ ) );
+if (! defined('CATCH_INFINITE_SCROLL_BASENAME')) {
+	define('CATCH_INFINITE_SCROLL_BASENAME', plugin_basename(__FILE__));
 }
 
-function catch_infinite_scroll_activate() {
+function catch_infinite_scroll_activate()
+{
 	$required = 'catch-infinite-scroll-pro/catch-infinite-scroll-pro.php';
-	if ( is_plugin_active( $required ) ) {
-		$message = esc_html__( 'Sorry, Pro plugin is already active. No need to activate Free version. %1$s&laquo; Return to Plugins%2$s.', 'catch-infinite-scroll' );
-		$message = sprintf( $message, '<br><a href="' . esc_url( admin_url( 'plugins.php' ) ) . '">', '</a>' );
-		wp_die( $message );
+	if (is_plugin_active($required)) {
+		$message =
+			// Translators: %1$s and %2$s wrap the "Return to Plugins" link. The message informs the user that the Pro version is active.
+
+			__('Sorry, Pro plugin is already active. No need to activate Free version. %1$s&laquo; Return to Plugins%2$s.', 'catch-infinite-scroll');
+
+		$message = sprintf(
+			$message,
+			'<br><a href="' . esc_url(admin_url('plugins.php')) . '">',
+			'</a>'
+		);
+
+		// Escape all HTML output before printing
+		wp_die(wp_kses_post($message));
 	}
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-catch-infinite-scroll-activator.php';
+	require_once plugin_dir_path(__FILE__) . 'includes/class-catch-infinite-scroll-activator.php';
 	Catch_Infinite_Scroll_Activator::activate();
 }
 
@@ -69,19 +80,20 @@ function catch_infinite_scroll_activate() {
  * The code that runs during plugin deactivation.
  * This action is documented in includes/class-catch-infinite-scroll-deactivator.php
  */
-function catch_infinite_scroll_deactivate() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-catch-infinite-scroll-deactivator.php';
+function catch_infinite_scroll_deactivate()
+{
+	require_once plugin_dir_path(__FILE__) . 'includes/class-catch-infinite-scroll-deactivator.php';
 	Catch_Infinite_Scroll_Deactivator::deactivate();
 }
 
-register_activation_hook( __FILE__, 'catch_infinite_scroll_activate' );
-register_deactivation_hook( __FILE__, 'catch_infinite_scroll_deactivate' );
+register_activation_hook(__FILE__, 'catch_infinite_scroll_activate');
+register_deactivation_hook(__FILE__, 'catch_infinite_scroll_deactivate');
 
 /**
  * The core plugin class that is used to define internationalization,
  * admin-specific hooks, and public-facing site hooks.
  */
-require plugin_dir_path( __FILE__ ) . 'includes/class-catch-infinite-scroll.php';
+require plugin_dir_path(__FILE__) . 'includes/class-catch-infinite-scroll.php';
 
 /**
  * Begins execution of the plugin.
@@ -92,11 +104,11 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-catch-infinite-scroll.php'
  *
  * @since    1.0.0
  */
-function catch_infinite_scroll_run() {
+function catch_infinite_scroll_run()
+{
 
 	$plugin = new Catch_Infinite_Scroll();
 	$plugin->run();
-
 }
 catch_infinite_scroll_run();
 
@@ -105,11 +117,12 @@ catch_infinite_scroll_run();
  *
  *  @since    1.0
  */
-function catch_infinite_scroll_get_options() {
+function catch_infinite_scroll_get_options()
+{
 	$defaults = catch_infinite_scroll_default_options();
-	$options  = get_option( 'catch_infinite_scroll_options', $defaults );
+	$options  = get_option('catch_infinite_scroll_options', $defaults);
 
-	return wp_parse_args( $options, $defaults );
+	return wp_parse_args($options, $defaults);
 }
 
 /**
@@ -118,7 +131,8 @@ function catch_infinite_scroll_get_options() {
  * @since     1.0
  * @return    array    default options.
  */
-function catch_infinite_scroll_default_options( $option = null ) {
+function catch_infinite_scroll_default_options($option = null)
+{
 
 	$default_options = array(
 		'trigger'             => 'click',
@@ -126,45 +140,45 @@ function catch_infinite_scroll_default_options( $option = null ) {
 		'next_selector'       => 'nav.navigation .nav-links a.next, nav.navigation .nav-links .nav-previous a, nav#nav-below .nav-previous a',
 		'content_selector'    => '#content',
 		'item_selector'       => 'article.status-publish',
-		'image'               => esc_url( trailingslashit( plugins_url( 'catch-infinite-scroll' ) ) . 'image/loader.gif' ),
-		'load_more_text'      => esc_html__( 'Load More', 'catch-infinite-scroll' ),
-		'finish_text'         => esc_html__( 'No more items to display', 'catch-infinite-scroll' ),
+		'image'               => esc_url(trailingslashit(plugins_url('catch-infinite-scroll')) . 'image/loader.gif'),
+		'load_more_text'      => esc_html__('Load More', 'catch-infinite-scroll'),
+		'finish_text'         => esc_html__('No more items to display', 'catch-infinite-scroll'),
 	);
 
-	$theme_support = get_theme_support( 'infinite-scroll' );
+	$theme_support = get_theme_support('infinite-scroll');
 
-	if ( isset( $theme_support ) && ! empty( $theme_support ) ) {
-		$default_options['trigger']          = isset( $theme_support[0]['type'] ) ? $theme_support[0]['type'] : 'click';
-		$default_options['content_selector'] = isset( $theme_support[0]['container'] ) ? $theme_support[0]['container'] : '.site-main';
+	if (isset($theme_support) && ! empty($theme_support)) {
+		$default_options['trigger']          = isset($theme_support[0]['type']) ? $theme_support[0]['type'] : 'click';
+		$default_options['content_selector'] = isset($theme_support[0]['container']) ? $theme_support[0]['container'] : '.site-main';
 	}
 
 	/* Support for twentytwenty theme */
 	$theme = wp_get_theme();
 
-	if ( 'twentytwenty' === $theme->stylesheet ) {
+	if ('twentytwenty' === $theme->stylesheet) {
 		// 'next_selector'       => 'nav.navigation .nav-links a.next, nav.navigation .nav-links .nav-previous a, nav#nav-below .nav-previous a',
 		$default_options['navigation_selector'] = 'nav.navigation';
 		$default_options['next_selector']       = 'nav.navigation .nav-links a.next';
 		$default_options['content_selector']    = '';
 	}
 
-	if ( null === $option ) {
-		return apply_filters( 'catch_infinite_scroll_options', $default_options );
+	if (null === $option) {
+		return apply_filters('catch_infinite_scroll_options', $default_options);
 	} else {
-		return $default_options[ $option ];
+		return $default_options[$option];
 	}
 }
 
 // Load jetpack-compatibility
-require_once plugin_dir_path( __FILE__ ) . 'includes/jetpack-compatibility.php';
+require_once plugin_dir_path(__FILE__) . 'includes/jetpack-compatibility.php';
 
 /* CTP tabs removal options */
-require plugin_dir_path( __FILE__ ) . '/includes/ctp-tabs-removal.php';
+require plugin_dir_path(__FILE__) . '/includes/ctp-tabs-removal.php';
 
 $ctp_options = ctp_get_options();
-if ( 1 == $ctp_options['theme_plugin_tabs'] ) {
+if (1 == $ctp_options['theme_plugin_tabs']) {
 	/* Adds Catch Themes tab in Add theme page and Themes by Catch Themes in Customizer's change theme option. */
-	if ( ! class_exists( 'CatchThemesThemePlugin' ) && ! function_exists( 'add_our_plugins_tab' ) ) {
-		require plugin_dir_path( __FILE__ ) . '/includes/CatchThemesThemePlugin.php';
+	if (! class_exists('CatchThemesThemePlugin') && ! function_exists('add_our_plugins_tab')) {
+		require plugin_dir_path(__FILE__) . '/includes/CatchThemesThemePlugin.php';
 	}
 }
