@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Infinite Scroll\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2026-02-25 15:38+0545\n"
+"POT-Creation-Date: 2026-05-21 12:58+0545\n"
 "PO-Revision-Date: 2016-12-12 09:23-0500\n"
 "Last-Translator: Sakin Shrestha <info@catchplugins.com>\n"
 "Language-Team: Catch Plugins <info@catchplugins.com>\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 "X-Poedit-KeywordsList: "
 "__;_e;_n:1,2;_x:1,2c;esc_attr_e;esc_attr__;_nx;_x;esc_html_e;esc_html__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_n_noop:1,2;__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
 "X-Poedit-Basepath: .\n"
@@ -215,7 +215,7 @@ msgid ""
 msgstr ""
 
 #: ../admin/partials/catch-infinite-scroll-admin-display.php:149
-#: ../catch-infinite-scroll.php:144
+#: ../catch-infinite-scroll.php:142
 msgid "Load More"
 msgstr ""
 
@@ -312,89 +312,93 @@ msgstr ""
 msgid "Plugin Options Saved."
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:47
+#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:44
 msgid "Load On (Trigger on)"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:52
+#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:49
 msgid "Scroll"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:53
+#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:50
 msgid "Click"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:60
+#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:57
 msgid "Navigation Selector"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:65
+#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:62
 msgid "Selector containing your theme's navigation."
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:70
+#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:67
 msgid "Next Selector"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:75
+#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:72
 msgid "Link to the next page."
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:80
+#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:77
 msgid "Content Selector"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:85
+#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:82
 msgid "Selector containing your theme's content."
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:90
+#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:87
 msgid "Item Selector"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:95
+#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:92
 msgid "Selector containing single post or product."
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:100
+#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:97
 msgid "Image"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:112
+#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:100
+msgid "Image URL HERE"
+msgstr ""
+
+#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:109
 msgid "Upload"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:114
+#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:111
 msgid "Change"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:122
+#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:119
 msgid "Reset"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:127
+#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:124
 msgid "Load More Text"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:136
+#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:133
 msgid "Finish Text"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:145
+#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:142
 msgid "Reset Options"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:148
+#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:145
 msgid "Check to reset"
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:150
+#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:147
 msgid ""
 "Caution: Reset all settings to default. Refresh the page after save to view "
 "full effects."
 msgstr ""
 
-#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:157
+#: ../admin/partials/catch-infinite-scroll-display-dashboard.php:154
 msgid "Save Changes"
 msgstr ""
 
@@ -479,18 +483,18 @@ msgid ""
 "without affecting your wallet."
 msgstr ""
 
-#: ../admin/partials/sidebar.php:69
+#: ../admin/partials/sidebar.php:68
 msgid "check our free plugins."
 msgstr ""
 
-#: ../catch-infinite-scroll.php:64
+#: ../catch-infinite-scroll.php:62
 #, php-format
 msgid ""
 "Sorry, Pro plugin is already active. No need to activate Free version. "
 "%1$s&laquo; Return to Plugins%2$s."
 msgstr ""
 
-#: ../catch-infinite-scroll.php:145
+#: ../catch-infinite-scroll.php:143
 msgid "No more items to display"
 msgstr ""
 

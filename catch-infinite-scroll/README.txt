@@ -3,8 +3,8 @@ Contributors: catchplugins, catchthemes, sakinshrestha, pratikshrestha, maheshma
 Donate link: https://catchplugins.com/plugins/catch-infinite-scroll-pro/
 Tags: infinite scroll, infinite scrolling, infinite, scroll, load more
 Requires at least: 5.9
-Tested up to: 6.9
-Stable tag: 2.1.1
+Tested up to: 7.0
+Stable tag: 2.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -41,6 +41,31 @@ Not so easy way (via FTP) :
 * Go to **Catch Infinite Scroll** from Dashboard menu
 
 == Changelog ==
+
+= 2.2 (Released: May 21, 2026) =
+* Bug Fixed: Finish Text disappeared after loading — scroll handler was repeatedly queuing fadeOut timers on every scroll event; handler removed so Finish Text remains visible
+* Bug Fixed: 'use strict' directive was wrapped in parentheses and not treated as a strict mode directive
+* Bug Fixed: Hardcoded color:#000 on .infinite-loader removed — finish text now inherits theme color, preventing invisible text on dark-background sites
+* Bug Fixed: Inverted nonce logic in sanitize_callback() — nonce failure now returns saved options (no data saved); eliminates 'Invalid Nonce' string being written to the database
+* Bug Fixed: Redundant check_admin_referer() removed from sanitize_callback() — single wp_verify_nonce() check is sufficient
+* Bug Fixed: Nonce field had a typo, was outside the form and never submitted — moved inside form with corrected name
+* Bug Fixed: Nonce action string mismatched between form and sanitize_callback() — settings were never saved
+* Bug Fixed: Reset option ran before nonce check — could be triggered via CSRF without a valid nonce
+* Bug Fixed: Trigger setting not validated against allowed values — now strictly checked against 'scroll' and 'click'
+* Bug Fixed: Clearing a selector field saved an empty string, breaking infinite scroll on the front end — critical selectors now fall back to defaults when cleared
+* Bug Fixed: next_selector used inconsistent isset condition — unified with other selector fields
+* Bug Fixed: Phantom argument removed from catch_infinite_scroll_get_options() call in public class
+* Bug Fixed: Unescaped echo for Load More Text row inline style — replaced with PHP conditional
+* Bug Fixed: Incorrect output escaping functions used across admin files
+* Bug Fixed: Incorrect sanitization functions used in sanitize_callback()
+* Bug Fixed: Global-scope CTP option loading moved into plugins_loaded hook
+* Bug Fixed: load_plugin_textdomain() path corrected
+* Bug Fixed: Admin and public scripts moved to footer for improved page performance
+* Bug Fixed: Missing ABSPATH guard added to public class file
+* Bug Fixed: Hardcoded placeholder text made translatable
+* Bug Fixed: Translators comment placement corrected
+* Bug Fixed: Trailing newlines inside href attribute values in sidebar.php removed
+* Compatibility check up to version 7.0
 
 = 2.1.1 (Released: February 25, 2026) =
 * Bug Fixed: Fixed JS enqueue path for adding catch themes tab item in Themes add theme section

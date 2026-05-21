@@ -1,5 +1,8 @@
 <?php
 
+// Exit if accessed directly
+if (! defined('ABSPATH')) exit;
+
 /**
  * The public-facing functionality of the plugin.
  *
@@ -97,7 +100,7 @@ class Catch_Infinite_Scroll_Public {
 		 * class.
 		 */
 
-		$settings = catch_infinite_scroll_get_options( 'catch_infinite_scroll_options' );
+		$settings = catch_infinite_scroll_get_options();
 
 		$options                    = array();
 		$options['jetpack_enabled'] = ( class_exists( 'Jetpack' ) ) ? true : false;
@@ -128,7 +131,7 @@ class Catch_Infinite_Scroll_Public {
 			$theme            = wp_get_theme();
 			$options['theme'] = $theme->stylesheet;
 
-			wp_register_script( $this->catch_infinite_scroll, plugin_dir_url( __FILE__ ) . 'js/catch-infinite-scroll-public.js', array( 'jquery' ), $this->version, false );
+			wp_register_script( $this->catch_infinite_scroll, plugin_dir_url( __FILE__ ) . 'js/catch-infinite-scroll-public.js', array( 'jquery' ), $this->version, true );
 
 			// Escaping JS before localizing.
 			$escaped_options = $this->escape_js( $options );

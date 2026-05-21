@@ -79,9 +79,9 @@ class Catch_Infinite_Scroll_Admin
 
 			$defaults = catch_infinite_scroll_default_options();
 
-			wp_enqueue_script($this->catch_infinite_scroll . '-match-height', plugin_dir_url(__FILE__) . 'js/jquery.matchHeight.min.js', array('jquery'), $this->version, false);
+			wp_enqueue_script($this->catch_infinite_scroll . '-match-height', plugin_dir_url(__FILE__) . 'js/jquery.matchHeight.min.js', array('jquery'), $this->version, true);
 
-			wp_register_script($this->catch_infinite_scroll, plugin_dir_url(__FILE__) . 'js/catch-infinite-scroll-admin.js', array('jquery', 'jquery-ui-tooltip'), $this->version, false);
+			wp_register_script($this->catch_infinite_scroll, plugin_dir_url(__FILE__) . 'js/catch-infinite-scroll-admin.js', array('jquery', 'jquery-ui-tooltip'), $this->version, true);
 
 			wp_localize_script($this->catch_infinite_scroll, 'default_options', $defaults);
 
@@ -160,71 +160,100 @@ class Catch_Infinite_Scroll_Admin
 	 */
 	public function sanitize_callback($input)
 	{
-		if ((isset($input['reset']) && $input['reset'])) {
-			//If reset, restore defaults
-			return catch_infinite_scroll_default_options();
+		$defaults = catch_infinite_scroll_default_options();
+
+		// Bail early on autosave.
+		if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+			return get_option('catch_infinite_scroll_options', $defaults);
 		}
-		$message = null;
-		$type    = null;
 
-		// Verify the nonce before proceeding.
-		if ((defined('DOING_AUTOSAVE') && DOING_AUTOSAVE)
-			|| (! isset($_POST['catch_infinite_scroll_nonce'])
-				|| ! wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['catch_infinite_scroll_nonce'])), basename(__FILE__)))
-			|| (! check_admin_referer(basename(__FILE__), 'catch_infinite_scroll_nonce'))
+		// Verify the nonce before proceeding. Must come before reset check to
+		// prevent CSRF from wiping settings with an invalid nonce.
+		if (! isset($_POST['catch_infinite_scroll_nonce'])
+			|| ! wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['catch_infinite_scroll_nonce'])), 'catch_infinite_scroll_options')
 		) {
-			if (null !== $input) {
+			return get_option('catch_infinite_scroll_options', $defaults);
+		}
 
-				if (isset($input['trigger']) && $input['trigger']) {
-					$input['trigger'] = sanitize_key($input['trigger']);
-				}
+		// Reset check runs only after nonce is verified.
+		if (isset($input['reset']) && $input['reset']) {
+			return $defaults;
+		}
 
-				if (isset($input['next_selector']) && $input['next_selector']) {
-					$input['next_selector'] = wp_kses_post($input['next_selector']);
-				}
+		if (null !== $input) {
 
-				if (isset($input['content_selector'])) {
-					$input['content_selector'] = wp_kses_post($input['content_selector']);
-				}
+			// Validate trigger against the allowed values only.
+			$valid_triggers   = array( 'scroll', 'click' );
+			$input['trigger'] = (isset($input['trigger']) && in_array($input['trigger'], $valid_triggers, true))
+				? sanitize_key($input['trigger'])
+				: $defaults['trigger'];
 
-				if (isset($input['item_selector'])) {
-					$input['item_selector'] = wp_kses_post($input['item_selector']);
-				}
-
-				if (isset($input['navigation_selector'])) {
-					$input['navigation_selector'] = wp_kses_post($input['navigation_selector']);
-				}
-
-				if (isset($input['image'])) {
-					$input['image'] = esc_url_raw($input['image']);
-				}
-
-				if (isset($input['load_more_text'])) {
-					$input['load_more_text'] = wp_kses_post($input['load_more_text']);
-				}
-
-				if (isset($input['finish_text'])) {
-					$input['finish_text'] = wp_kses_post($input['finish_text']);
+			// Sanitize critical selectors; fall back to defaults when cleared
+			// so a blank field never silently breaks the front end.
+			if (isset($input['navigation_selector'])) {
+				$input['navigation_selector'] = sanitize_text_field($input['navigation_selector']);
+				if ('' === $input['navigation_selector']) {
+					$input['navigation_selector'] = $defaults['navigation_selector'];
 				}
 			}
 
-			return $input;
-		} // End if().
-		return 'Invalid Nonce';
+			if (isset($input['next_selector'])) {
+				$input['next_selector'] = sanitize_text_field($input['next_selector']);
+				if ('' === $input['next_selector']) {
+					$input['next_selector'] = $defaults['next_selector'];
+				}
+			}
+
+			if (isset($input['content_selector'])) {
+				$input['content_selector'] = sanitize_text_field($input['content_selector']);
+				if ('' === $input['content_selector']) {
+					$input['content_selector'] = $defaults['content_selector'];
+				}
+			}
+
+			if (isset($input['item_selector'])) {
+				$input['item_selector'] = sanitize_text_field($input['item_selector']);
+				if ('' === $input['item_selector']) {
+					$input['item_selector'] = $defaults['item_selector'];
+				}
+			}
+
+			if (isset($input['image'])) {
+				$input['image'] = esc_url_raw($input['image']);
+			}
+
+			if (isset($input['load_more_text'])) {
+				$input['load_more_text'] = sanitize_text_field($input['load_more_text']);
+			}
+
+			if (isset($input['finish_text'])) {
+				$input['finish_text'] = sanitize_text_field($input['finish_text']);
+			}
+		}
+
+		return $input;
 	}
 
 	function add_plugin_meta_links($meta_fields, $file)
 	{
 		if (CATCH_INFINITE_SCROLL_BASENAME == $file) {
-			$meta_fields[] = "<a href='https://catchplugins.com/support-forum/forum/catch-infinite-scroll/' target='_blank'>Support Forum</a>";
-			$meta_fields[] = "<a href='https://wordpress.org/support/plugin/catch-infinite-scroll/reviews#new-post' target='_blank' title='Rate'>
-			        <i class='ct-rate-stars'>"
-				. "<svg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-star'><polygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2'/></svg>"
-				. "<svg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-star'><polygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2'/></svg>"
-				. "<svg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-star'><polygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2'/></svg>"
-				. "<svg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-star'><polygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2'/></svg>"
-				. "<svg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-star'><polygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2'/></svg>"
-				. '</i></a>';
+			$allowed_tags = array(
+				'a'       => array( 'href' => array(), 'target' => array(), 'title' => array() ),
+				'i'       => array( 'class' => array() ),
+				'svg'     => array( 'xmlns' => array(), 'width' => array(), 'height' => array(), 'viewbox' => array(), 'fill' => array(), 'stroke' => array(), 'stroke-width' => array(), 'stroke-linecap' => array(), 'stroke-linejoin' => array(), 'class' => array() ),
+				'polygon' => array( 'points' => array() ),
+			);
+
+			$star_svg = "<svg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-star'><polygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2'/></svg>";
+
+			$meta_fields[] = wp_kses(
+				"<a href='https://catchplugins.com/support-forum/forum/catch-infinite-scroll/' target='_blank'>Support Forum</a>",
+				$allowed_tags
+			);
+			$meta_fields[] = wp_kses(
+				"<a href='https://wordpress.org/support/plugin/catch-infinite-scroll/reviews#new-post' target='_blank' title='Rate'><i class='ct-rate-stars'>" . str_repeat($star_svg, 5) . '</i></a>',
+				$allowed_tags
+			);
 
 			$stars_color = '#ffb900';
 

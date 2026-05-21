@@ -28,16 +28,13 @@ if (! defined('ABSPATH')) exit;
                 </div>
             <?php } ?>
 
-            <?php // Use nonce for verification.
-            wp_nonce_field(basename(__FILE__), 'catch_infinite_scroll_nounce');
-            ?>
-
             <div id="catch_infinite_scroll_main">
                 <form method="post" action="options.php">
                     <?php settings_fields('catch-infinite-scroll-group'); ?>
+                    <?php wp_nonce_field('catch_infinite_scroll_options', 'catch_infinite_scroll_nonce'); ?>
                     <?php
                     $defaults = catch_infinite_scroll_default_options();
-                    $settings = catch_infinite_scroll_get_options('catch_infinite_scroll_options');
+                    $settings = catch_infinite_scroll_get_options();
                     ?>
                     <div class="option-container">
                         <table class="form-table">
@@ -60,7 +57,7 @@ if (! defined('ABSPATH')) exit;
                                     <th scope="row"><?php esc_html_e('Navigation Selector', 'catch-infinite-scroll'); ?></th>
                                     <td>
                                         <?php
-                                        echo '<input type="text" id="catch_infinite_scroll_options[navigation_selector]" name="catch_infinite_scroll_options[navigation_selector]" value="' . wp_kses_post($settings['navigation_selector']) . '"/>';
+                                        echo '<input type="text" id="catch_infinite_scroll_options[navigation_selector]" name="catch_infinite_scroll_options[navigation_selector]" value="' . esc_attr($settings['navigation_selector']) . '"/>';
                                         ?>
                                         <span class="dashicons dashicons-info tooltip" title="<?php esc_html_e('Selector containing your theme\'s navigation.', 'catch-infinite-scroll'); ?>"></span>
                                     </td>
@@ -70,7 +67,7 @@ if (! defined('ABSPATH')) exit;
                                     <th scope="row"><?php esc_html_e('Next Selector', 'catch-infinite-scroll'); ?></th>
                                     <td>
                                         <?php
-                                        echo '<input type="text" id="catch_infinite_scroll_options[next_selector]" name="catch_infinite_scroll_options[next_selector]" value="' . wp_kses_post($settings['next_selector']) . '"/>';
+                                        echo '<input type="text" id="catch_infinite_scroll_options[next_selector]" name="catch_infinite_scroll_options[next_selector]" value="' . esc_attr($settings['next_selector']) . '"/>';
                                         ?>
                                         <span class="dashicons dashicons-info tooltip" title="<?php esc_html_e('Link to the next page.', 'catch-infinite-scroll'); ?>"></span>
                                     </td>
@@ -80,7 +77,7 @@ if (! defined('ABSPATH')) exit;
                                     <th scope="row"><?php esc_html_e('Content Selector', 'catch-infinite-scroll'); ?></th>
                                     <td>
                                         <?php
-                                        echo '<input type="text" id="catch_infinite_scroll_options[content_selector]" name="catch_infinite_scroll_options[content_selector]" value="' . wp_kses_post($settings['content_selector']) . '"/>';
+                                        echo '<input type="text" id="catch_infinite_scroll_options[content_selector]" name="catch_infinite_scroll_options[content_selector]" value="' . esc_attr($settings['content_selector']) . '"/>';
                                         ?>
                                         <span class="dashicons dashicons-info tooltip" title="<?php esc_html_e('Selector containing your theme\'s content.', 'catch-infinite-scroll'); ?>"></span>
                                     </td>
@@ -90,7 +87,7 @@ if (! defined('ABSPATH')) exit;
                                     <th scope="row"><?php esc_html_e('Item Selector', 'catch-infinite-scroll'); ?></th>
                                     <td>
                                         <?php
-                                        echo '<input type="text" id="catch_infinite_scroll_options[item_selector]" name="catch_infinite_scroll_options[item_selector]" value="' . wp_kses_post($settings['item_selector']) . '"/>';
+                                        echo '<input type="text" id="catch_infinite_scroll_options[item_selector]" name="catch_infinite_scroll_options[item_selector]" value="' . esc_attr($settings['item_selector']) . '"/>';
                                         ?>
                                         <span class="dashicons dashicons-info tooltip" title="<?php esc_html_e('Selector containing single post or product.', 'catch-infinite-scroll'); ?>"></span>
                                     </td>
@@ -100,7 +97,7 @@ if (! defined('ABSPATH')) exit;
                                     <th scope="row"><?php esc_html_e('Image', 'catch-infinite-scroll'); ?></th>
                                     <td>
                                         <?php
-                                        echo '<input type="text" class="image-url" id="catch_infinite_scroll_options[image]" name="catch_infinite_scroll_options[image]" placeholder="Image URL HERE" value="' . esc_url($settings['image']) . '"/>';
+                                        echo '<input type="text" class="image-url" id="catch_infinite_scroll_options[image]" name="catch_infinite_scroll_options[image]" placeholder="' . esc_attr__('Image URL HERE', 'catch-infinite-scroll') . '" value="' . esc_url($settings['image']) . '"/>';
                                         ?>
                                         <span class="ctis-image-holder">
                                             <?php if ('' !== $settings['image']) {
@@ -119,15 +116,15 @@ if (! defined('ABSPATH')) exit;
                                         if ($defaults['image'] === $settings['image']) {
                                             $hide_class = 'ctis-hide';
                                         }
-                                        ?><button class="catch-infinite-scroll-reset-media-button button button-primary <?php echo esc_html($hide_class); ?>"><?php esc_html_e('Reset', 'catch-infinite-scroll'); ?></button>
+                                        ?><button class="catch-infinite-scroll-reset-media-button button button-primary <?php echo esc_attr($hide_class); ?>"><?php esc_html_e('Reset', 'catch-infinite-scroll'); ?></button>
                                     </td>
                                 </tr>
 
-                                <tr <?php echo ('scroll' === $settings['trigger']) ? ' style="display:none;"' : ''; ?>>
+                                <tr<?php if ('scroll' === $settings['trigger']) : ?> style="display:none;"<?php endif; ?>>
                                     <th scope="row"><?php esc_html_e('Load More Text', 'catch-infinite-scroll'); ?></th>
                                     <td>
                                         <?php
-                                        echo '<input type="text" id="catch_infinite_scroll_options[load_more_text]" name="catch_infinite_scroll_options[load_more_text]" value="' . wp_kses_post($settings['load_more_text']) . '" class="ctis-more-text"/>';
+                                        echo '<input type="text" id="catch_infinite_scroll_options[load_more_text]" name="catch_infinite_scroll_options[load_more_text]" value="' . esc_attr($settings['load_more_text']) . '" class="ctis-more-text"/>';
                                         ?>
                                     </td>
                                 </tr>
@@ -136,7 +133,7 @@ if (! defined('ABSPATH')) exit;
                                     <th scope="row"><?php esc_html_e('Finish Text', 'catch-infinite-scroll'); ?></th>
                                     <td>
                                         <?php
-                                        echo '<input type="text" id="catch_infinite_scroll_options[finish_text]" name="catch_infinite_scroll_options[finish_text]" value="' . wp_kses_post($settings['finish_text']) . '"/>';
+                                        echo '<input type="text" id="catch_infinite_scroll_options[finish_text]" name="catch_infinite_scroll_options[finish_text]" value="' . esc_attr($settings['finish_text']) . '"/>';
                                         ?>
                                     </td>
                                 </tr>

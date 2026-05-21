@@ -16,7 +16,7 @@
  * Plugin Name:       Catch Infinite Scroll
  * Plugin URI:        https://catchplugins.com/plugins/catch-infinite-scroll
  * Description:       Catch Infinite Scroll is a WordPress plugin that allows you to add the magic of infinite scrolling with several customization options on your website without affecting your wallet.
- * Version:           2.1.1
+ * Version:           2.2
  * Author:            Catch Plugins
  * Author URI:        https://catchplugins.com
  * License:           GPL-2.0+
@@ -33,7 +33,7 @@ if (! defined('WPINC')) {
 
 // Define plugin version
 if (! defined('CATCH_INFINITE_SCROLL_VERSION')) {
-	define('CATCH_INFINITE_SCROLL_VERSION', '2.1.1');
+	define('CATCH_INFINITE_SCROLL_VERSION', '2.2');
 }
 
 /**
@@ -58,10 +58,8 @@ function catch_infinite_scroll_activate()
 {
 	$required = 'catch-infinite-scroll-pro/catch-infinite-scroll-pro.php';
 	if (is_plugin_active($required)) {
-		$message =
-			// Translators: %1$s and %2$s wrap the "Return to Plugins" link. The message informs the user that the Pro version is active.
-
-			__('Sorry, Pro plugin is already active. No need to activate Free version. %1$s&laquo; Return to Plugins%2$s.', 'catch-infinite-scroll');
+		// Translators: %1$s and %2$s wrap the "Return to Plugins" link. The message informs the user that the Pro version is active.
+		$message = __('Sorry, Pro plugin is already active. No need to activate Free version. %1$s&laquo; Return to Plugins%2$s.', 'catch-infinite-scroll');
 
 		$message = sprintf(
 			$message,
@@ -175,10 +173,13 @@ require_once plugin_dir_path(__FILE__) . 'includes/jetpack-compatibility.php';
 /* CTP tabs removal options */
 require plugin_dir_path(__FILE__) . '/includes/ctp-tabs-removal.php';
 
-$ctp_options = ctp_get_options();
-if (1 == $ctp_options['theme_plugin_tabs']) {
-	/* Adds Catch Themes tab in Add theme page and Themes by Catch Themes in Customizer's change theme option. */
-	if (! class_exists('CatchThemesThemePlugin') && ! function_exists('add_our_plugins_tab')) {
-		require plugin_dir_path(__FILE__) . '/includes/CatchThemesThemePlugin.php';
+add_action('plugins_loaded', 'catch_infinite_scroll_load_theme_plugin_tabs');
+function catch_infinite_scroll_load_theme_plugin_tabs() {
+	$ctp_options = ctp_get_options();
+	if (1 == $ctp_options['theme_plugin_tabs']) {
+		/* Adds Catch Themes tab in Add theme page and Themes by Catch Themes in Customizer's change theme option. */
+		if (! class_exists('CatchThemesThemePlugin') && ! function_exists('add_our_plugins_tab')) {
+			require plugin_dir_path(__FILE__) . '/includes/CatchThemesThemePlugin.php';
+		}
 	}
 }

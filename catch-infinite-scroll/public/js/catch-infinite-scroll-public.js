@@ -1,5 +1,5 @@
 (function ($) {
-	('use strict');
+	'use strict';
 	/**
 	 * All of the code for your public-facing JavaScript source
 	 * should reside in this file.
@@ -92,24 +92,6 @@
 				load_on_scroll();
 			}
 
-			$(window).on('scroll', function () {
-				var t = $(this),
-					elem = $(itemSelector).last();
-
-				if (typeof elem == 'undefined') {
-					return;
-				}
-
-				if (
-					finished &&
-					t.scrollTop() + t.height() >=
-						elem.offset().top + elem.height()
-				) {
-					setTimeout(function () {
-						$('.ctis-finished-notice').fadeOut('slow');
-					}, 3000);
-				}
-			});
 		}
 
 		function ctis_load_more() {
